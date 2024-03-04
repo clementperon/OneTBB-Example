@@ -23,6 +23,9 @@ if(NOT TARGET TBB::tbb)
         message(ERROR "Failed to add oneTBB Library")
 endif()
 
+add_compile_options(-Werror)
+add_compile_options(-Weffc++)
+
 add_executable(one_tbb_example main.cpp) # Specify the executable and source file
 
 target_link_libraries(one_tbb_example PRIVATE TBB::tbb) # Link oneTBB library
